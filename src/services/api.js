@@ -1,14 +1,5 @@
 import axios from "../api/axios";
 
-// export const articleAPI = {
-//   getAll: (params) => axios.get('/articles', { params }),
-//   getBySlug: (slug) => axios.get(`/articles/${slug}`),
-//   getFeatured: () => axios.get('/articles/featured'),
-//   getBreaking: () => axios.get('/articles/breaking'),
-//   getTopStories: () => axios.get('/articles/top-stories'),
-//   getByCategory: (categorySlug, limit) => axios.get(`/articles/category/${categorySlug}`, { params: { limit } }),
-// };
-
 export const articleAPI = {
   getAll: (params) => axios.get("/articles", { params }),
   getBySlug: (slug) => axios.get(`/articles/${slug}`),
