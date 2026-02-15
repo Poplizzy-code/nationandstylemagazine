@@ -1,0 +1,17 @@
+[33m8c900a7[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m FORCE REBUILD - fix axios
+[33mdc6f69b[m Fix helpers.jsx fallback URL
+[33mb039a09[m Fix helpers.jsx fallback URL
+[33m61510bf[m Fix helpers.jsx fallback URL
+[33m2f12364[m revert
+[33mb283470[m Fix helpers with proper fallback URL
+[33mf71495a[m debug
+[33mb622fe9[m HARDCODE backend URL to fix images
+[33m35b9a33[m Debug environment variable
+[33md3d81df[m Debug environment variable
+[33medb48f6[m Debug environment variable
+[33maac38d4[m Force rebuild - clear cache
+[33m2068a21[m Fix image URL helper for production
+[33med53901[m Fix image URLs for production
+[33m168034a[m Fix API URL for production
+[33m23e2866[m Update API URL for production
+[33mff0658c[m Frontend ready for deployment
