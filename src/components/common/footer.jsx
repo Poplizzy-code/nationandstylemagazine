@@ -84,7 +84,7 @@ const Footer = () => {
       <div className="border-t border-gray-700">
         <div className="container mx-auto py-6">
           <p className="text-center text-gray-400 text-sm">
-            © 2024 Nation and Style Magazine. All rights reserved.
+            © 2026 Nation and Style Magazine. All rights reserved.
           </p>
         </div>
       </div>

@@ -97,10 +97,10 @@ const Header = () => {
                 </button>
               )}
               <div className="flex space-x-3 ml-4">
-                <a href="#" className="hover:text-yellow-400 transition-colors"><FiInstagram size={16} /></a>
-                <a href="#" className="hover:text-yellow-400 transition-colors"><FiTwitter size={16} /></a>
-                <a href="#" className="hover:text-yellow-400 transition-colors"><FiFacebook size={16} /></a>
-                <a href="#" className="hover:text-yellow-400 transition-colors"><FiYoutube size={16} /></a>
+                <a href="https://www.instagram.com/nationstylemagazine/" className="hover:text-yellow-400 transition-colors"><FiInstagram size={16} /></a>
+                <a href="https://www.instagram.com/nationstylemagazine/" className="hover:text-yellow-400 transition-colors"><FiTwitter size={16} /></a>
+                <a href="https://www.instagram.com/nationstylemagazine/" className="hover:text-yellow-400 transition-colors"><FiFacebook size={16} /></a>
+                <a href="https://www.instagram.com/nationstylemagazine/" className="hover:text-yellow-400 transition-colors"><FiYoutube size={16} /></a>
               </div>
             </div>
           </div>
