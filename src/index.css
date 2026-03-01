@@ -1,6 +1,53 @@
 @import "tailwindcss";
 
 /* Article Content Styling */
+/* Base drop cap styling - Golden Yellow */
+.article-content p:first-of-type::first-letter {
+  font-size: 4em;
+  font-weight: 900;
+  line-height: 0.85;
+  float: left;
+  margin: 5px 15px 0 0;
+  color: #D4AF37; /* Elegant gold */
+  font-family: 'Playfair Display', Georgia, serif;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Category-based variations (optional sophistication) */
+
+/* Fashion - Bright Gold */
+.article-content.fashion p:first-of-type::first-letter {
+  color: #FFD700;
+}
+
+/* News - Deep Navy Blue */
+.article-content.news p:first-of-type::first-letter {
+  color: #1B3A6D;
+}
+
+/* Lifestyle - Warm Gold */
+.article-content.lifestyle p:first-of-type::first-letter {
+  color: #D4AF37;
+}
+
+/* Entertainment - Metallic Gold */
+.article-content.entertainment p:first-of-type::first-letter {
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Features - Navy with Gold Shadow */
+.article-content.features p:first-of-type::first-letter {
+  color: #1B3A6D;
+  text-shadow: 2px 2px 0px #D4AF37;
+}
+
+/* Sports - Bold Gold */
+.article-content.sports p:first-of-type::first-letter {
+  color: #FFB000;
+}
 .prose {
   font-family: 'Georgia', serif;
   color: #1a1a1a;
