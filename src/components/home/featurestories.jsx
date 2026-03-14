@@ -10,7 +10,8 @@ const FeatureStories = () => {
   useEffect(() => {
     const fetchArticles = async () => {
       try {
-        const response = await articleAPI.getAll({ limit: 3, page: 1 });
+        // ✅ FIXED: Fetch from 'features' category instead of all articles
+        const response = await articleAPI.getByCategory('features', 3);
         setArticles(response.data.data);
       } catch (error) {
         console.error("Error fetching feature stories:", error);
@@ -87,6 +88,15 @@ const FeatureStories = () => {
               </div>
             </article>
           ))}
+        </div>
+
+        {/* View More Link */}
+        <div className="mt-8 text-center">
+          <Link
+            to="/category/features"
+            className="inline-block bg-secondary text-white px-8 py-3 font-bold hover:bg-secondary-dark transition-colors uppercase">
+            View More Stories
+          </Link>
         </div>
       </div>
     </section>
