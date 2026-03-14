@@ -11,7 +11,8 @@ const Featured = () => {
   useEffect(() => {
     const fetchFeaturedArticles = async () => {
       try {
-        const response = await articleAPI.getAll({ limit: 3, page: 2 });
+        // ✅ FIXED: Fetch from 'features' category
+        const response = await articleAPI.getByCategory('features', 3);
         setArticles(response.data.data);
       } catch (error) {
         console.error('Error fetching featured articles:', error);
