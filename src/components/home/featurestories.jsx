@@ -10,11 +10,11 @@ const FeatureStories = () => {
   useEffect(() => {
     const fetchArticles = async () => {
       try {
-        // ✅ FIXED: Fetch from 'features' category instead of all articles
-        const response = await articleAPI.getByCategory('features', 3);
+        // ✅ FIXED: Fetch articles where isCoverStory = true
+        const response = await articleAPI.getAll({ isCoverStory: true, limit: 3 });
         setArticles(response.data.data);
       } catch (error) {
-        console.error("Error fetching feature stories:", error);
+        console.error("Error fetching cover stories:", error);
       } finally {
         setLoading(false);
       }
@@ -51,53 +51,61 @@ const FeatureStories = () => {
         <h2 className="text-3xl md:text-4xl font-serif font-bold">STORIES</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {articles.map((article) => (
-            <article key={article._id} className="bg-white group card-hover">
-              <Link to={`/article/${article.slug}`}>
-                <div className="relative h-64 overflow-hidden">
-                  <img
-                    src={getImageUrl(article.featuredImage)}
-                    alt={article.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                </div>
-              </Link>
-
-              <div className="p-6">
-                <Link
-                  to={`/category/${article.category?.slug}`}
-                  className="inline-block text-xs font-bold text-secondary hover:text-secondary-dark mb-3 uppercase">
-                  {article.category?.name}
+          {articles.length > 0 ? (
+            articles.map((article) => (
+              <article key={article._id} className="bg-white group card-hover">
+                <Link to={`/article/${article.slug}`}>
+                  <div className="relative h-64 overflow-hidden">
+                    <img
+                      src={getImageUrl(article.featuredImage)}
+                      alt={article.title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
                 </Link>
 
-                <h3 className="text-xl font-serif font-bold mb-3 line-clamp-2">
+                <div className="p-6">
                   <Link
-                    to={`/article/${article.slug}`}
-                    className="hover:text-secondary transition-colors">
-                    {article.title}
+                    to={`/category/${article.category?.slug}`}
+                    className="inline-block text-xs font-bold text-secondary hover:text-secondary-dark mb-3 uppercase">
+                    {article.category?.name}
                   </Link>
-                </h3>
 
-                <p className="text-gray-600 text-sm line-clamp-3 mb-4">
-                  {article.excerpt}
-                </p>
+                  <h3 className="text-xl font-serif font-bold mb-3 line-clamp-2">
+                    <Link
+                      to={`/article/${article.slug}`}
+                      className="hover:text-secondary transition-colors">
+                      {article.title}
+                    </Link>
+                  </h3>
 
-                <div className="text-xs text-gray-500">
-                  {article.readTime} min read
+                  <p className="text-gray-600 text-sm line-clamp-3 mb-4">
+                    {article.excerpt}
+                  </p>
+
+                  <div className="text-xs text-gray-500">
+                    {article.readTime} min read
+                  </div>
                 </div>
-              </div>
-            </article>
-          ))}
+              </article>
+            ))
+          ) : (
+            <div className="col-span-3 text-center py-12">
+              <p className="text-gray-500 text-lg">No cover stories available at the moment.</p>
+            </div>
+          )}
         </div>
 
-        {/* View More Link */}
-        <div className="mt-8 text-center">
-          <Link
-            to="/category/features"
-            className="inline-block bg-secondary text-white px-8 py-3 font-bold hover:bg-secondary-dark transition-colors uppercase">
-            View More Stories
-          </Link>
-        </div>
+        {/* View All Cover Stories Link */}
+        {articles.length > 0 && (
+          <div className="mt-8 text-center">
+            <Link
+              to="/category/features"
+              className="inline-block bg-secondary text-white px-8 py-3 font-bold hover:bg-secondary-dark transition-colors uppercase">
+              View More Stories
+            </Link>
+          </div>
+        )}
       </div>
     </section>
   );
